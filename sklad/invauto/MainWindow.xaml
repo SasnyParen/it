@@ -1,0 +1,48 @@
+﻿<Window x:Class="invauto.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Главное меню" Height="600" Width="800" WindowStartupLocation="CenterScreen" Background="#1D1D1D">
+    <Window.Resources>
+        <!-- Стиль кнопок -->
+        <Style x:Key="MenuButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#333" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderBrush" Value="#444"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="15,0"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="BorderBrush" Value="#555"/>
+            <Setter Property="Background" Value="#2D2D2D"/>
+
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <!-- Левая панель с кнопками -->
+        <DockPanel Width="220" Background="#2B2B2B" VerticalAlignment="Stretch" HorizontalAlignment="Left">
+            <StackPanel>
+                <Button Content="Профиль" Style="{StaticResource MenuButtonStyle}" Click="ProfileButton_Click"/>
+                <Button Content="Просмотр новостей" Style="{StaticResource MenuButtonStyle}" Click="NewsButton_Click"/>
+                <Button Content="Управление мероприятиями" Style="{StaticResource MenuButtonStyle}" Click="EventsButton_Click"/>
+                <Button Content="Добавить задачу" Style="{StaticResource MenuButtonStyle}" Click="AddTaskButton_Click"/>
+                <Button Content="Регистрация на мероприятие" Style="{StaticResource MenuButtonStyle}" Click="RegisterEventButton_Click"/>
+                <Button Content="Экстренная связь" Style="{StaticResource MenuButtonStyle}" Click="EmergencyButton_Click"/>
+                <Button Content="Выход" Style="{StaticResource MenuButtonStyle}" Click="ExitButton_Click"/>
+            </StackPanel>
+        </DockPanel>
+
+        <!-- Основная рабочая область -->
+        <Grid Margin="220,0,0,0">
+            <Border BorderBrush="#555" BorderThickness="1" CornerRadius="10" Padding="20">
+                <ContentControl x:Name="MainContent" />
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
